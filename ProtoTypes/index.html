@@ -9,7 +9,12 @@
 <div class="mainContainer">
     <h1>ToDO List Prototypes</h1>
     <div class="inputContainer">
-        <input type="text" id='textValue' placeholder="напиши новую таску!">
+        <input
+                type="text"
+                id='textValue'
+                placeholder="напиши новую таску!"
+                onkeyup="enterSender(event)"
+        >
         <button onclick="addNewTask()">+</button>
     </div>
     <div class="list" id="taskContainer">

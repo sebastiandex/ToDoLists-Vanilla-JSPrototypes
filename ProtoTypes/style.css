@@ -11,10 +11,13 @@
 }
 .inputContainer {
     display: flex;
-    width: 90%;
+    width: 60%;
+    margin: 20px auto;
     height: 50px;
     align-self: center;
-    border: 1px solid black;
+    border: 1px solid dimgrey;
+    border-radius: 5px;
+    box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
 }
 h1 {
     text-align: center;
@@ -23,17 +26,15 @@ button {
     display: block;
     width: 100px;
     height: 50px;
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: yellowgreen;
     color: black;
     font-size: 26px;
 }
 .list {
     display: inline-block;
-    width: 90%;
+    width: 100%;
     height: auto;
-    background-color: cornsilk;
-    margin: 0 auto;
 }
 .task {
     display: block;
@@ -45,6 +46,7 @@ button {
     border-radius: 5px;
     border: 1px black solid;
     margin: 10px auto;
+    box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
 
 }
 input {

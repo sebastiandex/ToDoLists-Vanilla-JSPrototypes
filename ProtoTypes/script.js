@@ -1,6 +1,6 @@
 const input = document.getElementById('textValue');
 const taskContainer = document.getElementById("taskContainer");
-const defaultDiv = function (id, label, isImportant) {
+const defaultDiv = function (id, label) {
     const defDiv = document.createElement('div');
     defDiv.innerHTML = label;
     defDiv.style.width = '70%';
@@ -11,7 +11,8 @@ const defaultDiv = function (id, label, isImportant) {
     defDiv.style.height = '50px'
     defDiv.style.fontSize = '20px'
     defDiv.style.lineHeight = '50px'
-
+    defDiv.style.borderRadius = '5px'
+    defDiv.style.boxShadow = '4px 4px 8px 0 rgba(34, 60, 80, 0.2)'
     return (
         defDiv
     )
@@ -24,3 +25,9 @@ const addNewTask = () => {
     document.getElementById('textValue').value = '';
 
 };
+const enterSender = (e) => {
+    console.log(e)
+    if (e.keyCode === 13) {
+        addNewTask();
+    }
+}
