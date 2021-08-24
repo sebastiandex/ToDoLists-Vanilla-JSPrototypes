@@ -1,0 +1,55 @@
+.mainContainer {
+    display: block;
+    position: fixed;
+    min-height: 650px;
+    /*min-height: 500px;*/
+    height: auto;
+    width: 100%;
+    background-color: white;
+    align-content: center;
+
+}
+.inputContainer {
+    display: flex;
+    width: 90%;
+    height: 50px;
+    align-self: center;
+    border: 1px solid black;
+}
+h1 {
+    text-align: center;
+}
+button {
+    display: block;
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: yellowgreen;
+    color: black;
+    font-size: 26px;
+}
+.list {
+    display: inline-block;
+    width: 90%;
+    height: auto;
+    background-color: cornsilk;
+    margin: 0 auto;
+}
+.task {
+    display: block;
+    width: 70%;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 20px;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px black solid;
+    margin: 10px auto;
+
+}
+input {
+    all: unset;
+    height: 100%;
+    width: 100%;
+    padding-left: 20px;
+}
