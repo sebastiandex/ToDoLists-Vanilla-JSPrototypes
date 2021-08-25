@@ -22,7 +22,7 @@
 h1 {
     text-align: center;
 }
-button {
+.addButton {
     display: block;
     width: 100px;
     height: 50px;
