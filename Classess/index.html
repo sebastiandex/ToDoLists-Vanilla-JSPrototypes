@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>ToDoList Classes</title>
+</head>
+<body>
+<div class="mainContainer">
+    <h1>ToDO List Prototypes</h1>
+    <div class="inputContainer">
+        <input
+                type="text"
+                id='textValue'
+                placeholder="напиши новую таску!"
+                onkeyup="enterSender(event)"
+        >
+        <button class='addButton' onclick="addNewTask()">+</button>
+    </div>
+    <div class="list" id="taskContainer"></div>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
