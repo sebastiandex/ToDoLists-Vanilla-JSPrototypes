@@ -3,11 +3,11 @@
 <head>
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
-    <title>ToDoList Classes</title>
+    <title>ToDoList Events</title>
 </head>
 <body>
 <div class="mainContainer">
-    <h1>ToDO List Prototypes</h1>
+    <h1>ToDO List Events</h1>
     <div class="inputContainer">
         <input
                 type="text"
@@ -15,7 +15,7 @@
                 placeholder="напиши новую таску!"
                 onkeyup="enterSender(event)"
         >
-        <button class='addButton' onclick="addNewTask()">+</button>
+        <button class='addButton' id="addButton">+</button>
     </div>
     <div class="list" id="taskContainer"></div>
 

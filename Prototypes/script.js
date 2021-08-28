@@ -1,18 +1,11 @@
 const input = document.getElementById('textValue');
 const taskContainer = document.getElementById("taskContainer");
+const style = "width: 70%; text-align: center; background-color: white; border: 1px solid black; margin: 20px auto; height: 50px; font-size: 20px; line-height: 50px; border-radius: 5px; box-shadow: rgba(34, 60, 80, 0.2) 4px 4px 8px 0px";
+
 const defaultDiv = function (id, label) {
     const defDiv = document.createElement('div');
     defDiv.innerHTML = `${label} <button type="submit" onclick="this.parentElement.remove()" style='background-color: red; color: white; cursor: pointer'>Done!</button>`;
-    defDiv.style.width = '70%'
-    defDiv.style.textAlign = 'center'
-    defDiv.style.backgroundColor = 'white'
-    defDiv.style.border = '1px black solid'
-    defDiv.style.margin = '20px auto'
-    defDiv.style.height = '50px'
-    defDiv.style.fontSize = '20px'
-    defDiv.style.lineHeight = '50px'
-    defDiv.style.borderRadius = '5px'
-    defDiv.style.boxShadow = '4px 4px 8px 0 rgba(34, 60, 80, 0.2)'
+    defDiv.style = style;
     return (
         defDiv
     )
