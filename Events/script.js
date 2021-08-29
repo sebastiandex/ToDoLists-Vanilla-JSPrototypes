@@ -1,12 +1,20 @@
-const input = document.getElementById('textValue');
+const inputValue = document.getElementById('textValue');
 const taskContainer = document.getElementById("taskContainer");
 const style = "width: 70%; text-align: center; background-color: white; border: 1px solid black; margin: 20px auto; height: 50px; font-size: 20px; line-height: 50px; border-radius: 5px; box-shadow: rgba(34, 60, 80, 0.2) 4px 4px 8px 0px";
 
 
 const addNewTask = () => {
-    if (input.value !== '' ) {
+    if (inputValue.value !== '' ) {
         const newDiv = document.createElement('div');
-        newDiv.innerHTML = `${input.value} <button type="submit" onclick="this.parentElement.remove()" style='background-color: red; color: white; cursor: pointer'>Done!</button>`;
+        const input = document.createElement('input');
+        input.style = 'width: 70%'
+        input.value = inputValue.value
+        newDiv.appendChild(input);
+        const button = document.createElement('button');
+        button.style = 'background-color: red; color: white; cursor: pointer';
+        button.innerHTML = 'Удолить';
+        button.onclick = function () {this.parentElement.remove()}
+        newDiv.appendChild(button);
         newDiv.style = style;
         taskContainer.appendChild(newDiv);
         document.getElementById('textValue').value = '';

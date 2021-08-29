@@ -13,8 +13,9 @@ class defaultDiv {
         const defDiv = document.createElement('div');
         defDiv.id = this.id;
         defDiv.style = style;
-        const label = document.createElement('label');
-        label.innerHTML = this.task;
+        const label = document.createElement('input');
+        label.value = this.task;
+        label.style = 'width: 70%';
         const defButton = document.createElement('button');
             defButton.style = 'background-color: red; color: white; cursor: pointer; margin-left: 30px';
             defButton.innerHTML = "Del";
