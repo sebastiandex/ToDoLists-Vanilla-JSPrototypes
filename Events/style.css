@@ -1,8 +1,6 @@
 .mainContainer {
     display: block;
-    position: fixed;
     min-height: 650px;
-    /*min-height: 500px;*/
     height: auto;
     width: 100%;
     background-color: white;
@@ -33,6 +31,7 @@ h1 {
 }
 .list {
     display: inline-block;
+    overflow: auto;
     width: 100%;
     height: auto;
 }

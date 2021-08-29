@@ -5,15 +5,18 @@ const style = "width: 70%; text-align: center; background-color: white; border: 
 const defaultDiv = function (id, label) {
     const defDiv = document.createElement('div');
     defDiv.style = style;
+
     const input = document.createElement('input');
     input.style = 'width: 70%'
     input.value = inputValue.value
     defDiv.appendChild(input);
+
     const button = document.createElement('button');
     button.style = 'background-color: red; color: white; cursor: pointer';
     button.innerHTML = 'Удолить';
     button.onclick = function () {this.parentElement.remove()}
     defDiv.appendChild(button);
+
     return (
         defDiv
     )

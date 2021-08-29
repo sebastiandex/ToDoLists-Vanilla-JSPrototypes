@@ -1,8 +1,6 @@
 .mainContainer {
     display: block;
-    position: fixed;
     min-height: 650px;
-    /*min-height: 500px;*/
     height: auto;
     width: 100%;
     background-color: white;

@@ -6,16 +6,19 @@ const style = "width: 70%; text-align: center; background-color: white; border: 
 const addNewTask = () => {
     if (inputValue.value !== '' ) {
         const newDiv = document.createElement('div');
+        newDiv.style = style;
+
         const input = document.createElement('input');
         input.style = 'width: 70%'
         input.value = inputValue.value
         newDiv.appendChild(input);
+
         const button = document.createElement('button');
         button.style = 'background-color: red; color: white; cursor: pointer';
         button.innerHTML = 'Удолить';
         button.onclick = function () {this.parentElement.remove()}
         newDiv.appendChild(button);
-        newDiv.style = style;
+
         taskContainer.appendChild(newDiv);
         document.getElementById('textValue').value = '';
     }
