@@ -1,37 +1,37 @@
-const inputValue = document.getElementById('textValue');
-const taskContainer = document.getElementById("taskContainer");
-const style = "width: 70%; text-align: center; background-color: white; border: 1px solid black; margin: 20px auto; height: 50px; font-size: 20px; line-height: 50px; border-radius: 5px; box-shadow: rgba(34, 60, 80, 0.2) 4px 4px 8px 0px";
+const input = document.getElementById('textValue');
 
-const defaultDiv = function (id, label) {
-    const defDiv = document.createElement('div');
-    defDiv.style = style;
-
-    const input = document.createElement('input');
-    input.style = 'width: 70%'
-    input.value = inputValue.value
-    defDiv.appendChild(input);
-
-    const button = document.createElement('button');
-    button.style = 'background-color: red; color: white; cursor: pointer';
-    button.innerHTML = 'Удолить';
-    button.onclick = function () {this.parentElement.remove()}
-    defDiv.appendChild(button);
-
-    return (
-        defDiv
-    )
-};
-const taskArray = [];
+let toDoList = {
+    createTask: function (text) {
+        const listItem = document.createElement('li');
+        listItem.style = "list-style-type: none; width: 70%; text-align: center; background-color: white; border: 1px solid black; margin: 20px auto; height: 50px; font-size: 20px; line-height: 50px; border-radius: 5px; box-shadow: rgba(34, 60, 80, 0.2) 4px 4px 8px 0px";
+        const label = document.createElement('input');
+        label.value = text;
+        label.style = 'width: 70%';
+        listItem.appendChild(label);
+        const defButton = document.createElement('button');
+        defButton.style = 'background-color: red; color: white; cursor: pointer; margin-left: 30px';
+        defButton.innerHTML = "Del";
+        defButton.onclick = () => {this.removeTask(listItem)};
+        listItem.appendChild(defButton);
+        return listItem
+    },
+    addTask: function (text) {
+        let list = document.getElementById('taskContainer');
+        list.appendChild(this.createTask(text));
+    },
+    removeTask: function (item) {
+        item.remove();
+    }
+}
 
 const addNewTask = () => {
-    if (inputValue.value !== '' ) {
-        let newDiv = new defaultDiv(taskArray.length + 1, inputValue.value);
-        taskContainer.appendChild(newDiv);
-        taskArray.push(taskArray.length + 1)
+    if (input.value !== '') {
+        let newTask = {};
+        newTask.__proto__ = toDoList;
+        newTask.addTask(input.value);
         document.getElementById('textValue').value = '';
     }
 };
-
 const enterSender = (e) => {
     if (e.keyCode === 13) {
         addNewTask();
