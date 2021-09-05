@@ -1,6 +1,6 @@
 const input = document.getElementById('textValue');
 
-let toDoList = {
+const toDoList = {
     createTask: function (text) {
         const listItem = document.createElement('li');
         listItem.style = "list-style-type: none; width: 70%; text-align: center; background-color: white; border: 1px solid black; margin: 20px auto; height: 50px; font-size: 20px; line-height: 50px; border-radius: 5px; box-shadow: rgba(34, 60, 80, 0.2) 4px 4px 8px 0px";
