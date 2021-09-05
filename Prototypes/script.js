@@ -22,6 +22,7 @@ const defaultDiv = function (id, label) {
     )
 };
 const taskArray = [];
+
 const addNewTask = () => {
     if (inputValue.value !== '' ) {
         let newDiv = new defaultDiv(taskArray.length + 1, inputValue.value);
@@ -30,6 +31,7 @@ const addNewTask = () => {
         document.getElementById('textValue').value = '';
     }
 };
+
 const enterSender = (e) => {
     if (e.keyCode === 13) {
         addNewTask();

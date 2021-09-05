@@ -1,39 +1,32 @@
 const input = document.getElementById('textValue');
-const taskContainer = document.getElementById("taskContainer");
-const style = "width: 70%; text-align: center; background-color: white; border: 1px solid black; margin: 20px auto; height: 50px; font-size: 20px; line-height: 50px; border-radius: 5px; box-shadow: rgba(34, 60, 80, 0.2) 4px 4px 8px 0px";
-const taskArray = [];
 
-class defaultDiv {
-    constructor(task, id) {
-        this.task = task;
-        this.id = id;
-    };
-
-    addDiv() {
-        const defDiv = document.createElement('div');
-        defDiv.id = this.id;
-        defDiv.style = style;
-
+class toDoList {
+    static createTask (text) {
+        const listItem = document.createElement('li');
+        listItem.style = "list-style-type: none; width: 70%; text-align: center; background-color: white; border: 1px solid black; margin: 20px auto; height: 50px; font-size: 20px; line-height: 50px; border-radius: 5px; box-shadow: rgba(34, 60, 80, 0.2) 4px 4px 8px 0px";
         const label = document.createElement('input');
-        label.value = this.task;
+        label.value = text;
         label.style = 'width: 70%';
-
+        listItem.appendChild(label);
         const defButton = document.createElement('button');
-            defButton.style = 'background-color: red; color: white; cursor: pointer; margin-left: 30px';
-            defButton.innerHTML = "Del";
-            defButton.onclick = () => {document.getElementById(`${this.id}`).remove()};
-
-        defDiv.appendChild(label);
-        defDiv.appendChild(defButton);
-        return defDiv
-    };
+        defButton.style = 'background-color: red; color: white; cursor: pointer; margin-left: 30px';
+        defButton.innerHTML = "Del";
+        defButton.onclick = () => {this.removeTask(listItem)};
+        listItem.appendChild(defButton);
+        return listItem
+    }
+    static addTask (text) {
+        let list = document.getElementById('taskContainer');
+        list.appendChild(this.createTask(text));
+    }
+    static removeTask(item) {
+        item.remove();
+    }
 }
 
 const addNewTask = () => {
     if (input.value !== '') {
-        const newDiv = new defaultDiv(input.value, (taskArray.length + 1).toString())
-        taskContainer.append(newDiv.addDiv());
-        taskArray.push(taskArray.length + 1)
+        toDoList.addTask(input.value);
         document.getElementById('textValue').value = '';
     }
 };
